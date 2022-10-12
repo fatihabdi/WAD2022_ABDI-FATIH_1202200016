@@ -13,7 +13,7 @@ Fork atau Clone repo ini dengan mengetika command ini di terminal anda
 ### HTTPS METHOD
 
 ```bash
-https://github.com/fatihabdi/WAD2022_ABDI-FATIH_1202200016.git
+https://github.com/fatihabdi/WAD2022_FATIH_1202200016.git
 ```
 
 <br/>
@@ -21,5 +21,5 @@ https://github.com/fatihabdi/WAD2022_ABDI-FATIH_1202200016.git
 ### SSH METHOD
 
 ```bash
-git@github.com:fatihabdi/WAD2022_ABDI-FATIH_1202200016.git
+git@github.com:fatihabdi/WAD2022_FATIH_1202200016.git
 ```
