@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
 
+<?php
+require 'db.php';
+?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,33 +17,13 @@
 </head>
 
 <body>
-    <?php
-    $mobil = [
-        [
-            "mobil" => "Toyota Rush",
-            "harga" => "200.000",
-            "img" => "img/rush.png"
-        ],
-        [
-            "mobil" => "Toyota Ayla",
-            "harga" => "150.000",
-            "img" => "img/ayla.png"
-        ],
-        [
-            "mobil" => "Honda Brio",
-            "harga" => "150.000",
-            "img" => "img/brio.jpeg"
-        ],
-    ]
-
-    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
 
             <div class="collapse navbar-collapse justify-content-md-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="fatih_home.php">Home</a>
+                        <a class="nav-link active" href="fatih_home.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="fatih_booking.php">Booking</a>
@@ -61,10 +45,10 @@
         <div class="d-flex justify-content-around">
             <div class="col-3 m-1">
                 <div class="card shadow-sm rounded">
-                    <img src="<?php echo $mobil[0]["img"]; ?>" alt="">
+                    <img src="<?php echo $listmobil[0]["img"]; ?>" alt="">
                     <div class="m-3">
-                        <p class="m-0" style="font-size: 20px"><?php echo $mobil[0]["mobil"]; ?></p>
-                        <p class="m-0" style="color: grey">Rp. <?php echo $mobil[0]["harga"]; ?> / Day</p>
+                        <p class="m-0" style="font-size: 20px"><?php echo $listmobil[0]["mobil"]; ?></p>
+                        <p class="m-0" style="color: grey">Rp. <?php echo $listmobil[0]["harga"]; ?> / Day</p>
                     </div>
                     <hr class="m-0">
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">7 Kursi</p>
@@ -74,16 +58,16 @@
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">Manual</p>
                     <hr class="m-0">
                     <div class="text-center bg-light">
-                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $mobil[0]["img"]; ?>&mobil=<?= $mobil[0]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
+                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $listmobil[0]["img"]; ?>&mobil=<?= $listmobil[0]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-3 m-1 ms-2 me-2">
                 <div class="card shadow-sm rounded">
-                    <img src="<?php echo $mobil[1]["img"]; ?>" alt="">
+                    <img src="<?php echo $listmobil[1]["img"]; ?>" alt="">
                     <div class="m-3">
-                        <p class="m-0" style="font-size: 20px"><?php echo $mobil[1]["mobil"]; ?></p>
-                        <p class="m-0" style="color: grey">Rp. <?php echo $mobil[1]["harga"]; ?> / Day</p>
+                        <p class="m-0" style="font-size: 20px"><?php echo $listmobil[1]["mobil"]; ?></p>
+                        <p class="m-0" style="color: grey">Rp. <?php echo $listmobil[1]["harga"]; ?> / Day</p>
                     </div>
                     <hr class="m-0">
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">5 Kursi</p>
@@ -93,16 +77,16 @@
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">Manual</p>
                     <hr class="m-0">
                     <div class="text-center bg-light">
-                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $mobil[1]["img"]; ?>&mobil=<?= $mobil[1]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
+                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $listmobil[1]["img"]; ?>&mobil=<?= $listmobil[1]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-3 m-1">
                 <div class="card shadow-sm rounded">
-                    <img src="<?php echo $mobil[2]["img"]; ?>" alt="" style="width:280px;">
+                    <img src="<?php echo $listmobil[2]["img"]; ?>" alt="" style="width:280px;">
                     <div class="m-3">
-                        <p class="m-0" style="font-size: 20px"><?php echo $mobil[2]["mobil"]; ?></p>
-                        <p class="m-0" style="color: grey">Rp. <?php echo $mobil[2]["harga"]; ?> / Day</p>
+                        <p class="m-0" style="font-size: 20px"><?php echo $listmobil[2]["mobil"]; ?></p>
+                        <p class="m-0" style="color: grey">Rp. <?php echo $listmobil[2]["harga"]; ?> / Day</p>
                     </div>
                     <hr class="m-0">
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">5 Kursi</p>
@@ -112,7 +96,7 @@
                     <p class="m-2" style="text-align: center; color: blue; font-weight: bold;">Automatic</p>
                     <hr class="m-0">
                     <div class="text-center bg-light">
-                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $mobil[2]["img"]; ?>&mobil=<?= $mobil[2]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
+                        <button class="m-2 btn btn-primary" type="submit"><a href="fatih_booking.php?img=<?= $listmobil[2]["img"]; ?>&mobil=<?= $listmobil[2]["mobil"]; ?>" style="color: white; text-decoration: none;">Book Now</a></button>
                     </div>
                 </div>
             </div>

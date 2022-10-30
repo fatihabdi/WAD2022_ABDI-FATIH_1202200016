@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
 
+<?php
+require 'db.php';
+?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,25 +17,6 @@
 </head>
 
 <body><?php
-        $name = "Fatih_1202200016";
-
-        $listmobil = [
-            [
-                "mobil" => "Toyota Rush",
-                "harga" => 200000,
-                "img" => "img/rush.png"
-            ],
-            [
-                "mobil" => "Toyota Ayla",
-                "harga" => 150000,
-                "img" => "img/ayla.png"
-            ],
-            [
-                "mobil" => "Honda Brio",
-                "harga" => 150000,
-                "img" => "img/brio.jpeg"
-            ],
-        ];
 
         $book = $_POST["book"] . " " . $_POST["time"];
         $startbook = date("d-m-Y H:i:s", strtotime($book));
@@ -67,7 +52,7 @@
                         <a class="nav-link" href="fatih_home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="fatih_booking.php">Booking</a>
+                        <a class="nav-link active" href="fatih_booking.php">Booking</a>
                     </li>
                 </ul>
             </div>

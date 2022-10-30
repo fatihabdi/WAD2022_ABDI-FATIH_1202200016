@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 
+<?php
+require 'db.php';
+?>
+
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,37 +18,15 @@
 </head>
 
 <body>
-    <?php
-
-    $mobil = [
-        [
-            "mobil" => "Toyota Rush",
-            "harga" => 200000,
-            "img" => "img/rush.png"
-        ],
-        [
-            "mobil" => "Toyota Ayla",
-            "harga" => 150000,
-            "img" => "img/ayla.png"
-        ],
-        [
-            "mobil" => "Honda Brio",
-            "harga" => 150000,
-            "img" => "img/brio.jpeg"
-        ],
-    ]
-
-    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-
             <div class="collapse navbar-collapse justify-content-md-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="fatih_home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="fatih_booking.php">Booking</a>
+                        <a class="nav-link active" href="fatih_booking.php">Booking</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +71,7 @@
                             <label for="mobil">Car Type</label>
                             <select class="form-select" name="mobil" id="mobil">
                                 <option selected>Choose...</option>
-                                <?php foreach ($mobil as $mbl) : ?>
+                                <?php foreach ($listmobil as $mbl) : ?>
                                     <?php
                                     if ($mbl["mobil"] == $_GET["mobil"]) {
                                     ?><option selected="selected" value="<?= $mbl["mobil"]; ?>"><?= $mbl["mobil"]; ?></option>
@@ -109,8 +92,8 @@
                             <input class="form-check-input m-1" type="checkbox" name="ser[]" value="Driver" id="driver"><label class="form-check-label" for="driver">Driver / Rp100.000</label><br>
                             <input class="form-check-input m-1" type="checkbox" name="ser[]" value="Fuel Filled" id="fuel"><label class="form-check-label" for="fuel">Fuel Filled / Rp.250.000</label><br>
                         </li>
-                        <li class="text-center">
-                            <button class="btn btn-primary justify-content-around" type="submit">Book</button>
+                        <li class="text-center pt-3">
+                            <button class="btn btn-success justify-content-around" type="submit" style="width: 510px;">Book</button>
                         </li>
                     </form>
                 </ul>
