@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-6 ps-5 pe-5">
                     <ul type="none">
-                        <form action="" method="">
+                        <form action="fatih_myBooking.php" method="post">
                             <li class="m-1">
                                 <label for="nama">Name</label><br>
                                 <input class="form-control" type="text" name="nama" id="nama" value="Fatih_1202200016" readonly>
@@ -71,7 +71,7 @@
                                 <label for="mobil">Car Type</label>
                                 <select class="form-select" name="mobil" id="mobil">
                                     <option selected>Choose...</option>
-                                    <?php foreach () : ?>
+                                    <?php foreach ($listmobil as $mbl) : ?>
                                         <?php
                                         if ($mbl["mobil"] == $_GET["mobil"]) {
                                         ?><option selected="selected" value="<?= $mbl["mobil"]; ?>"><?= $mbl["mobil"]; ?></option>

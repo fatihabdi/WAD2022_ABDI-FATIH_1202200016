@@ -2,7 +2,7 @@
     <html lang="en">
 
     <?php
-    require '';
+    require 'db.php';
     ?>
 
     <head>
