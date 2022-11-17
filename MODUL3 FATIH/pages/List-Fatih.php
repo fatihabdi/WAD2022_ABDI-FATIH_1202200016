@@ -47,7 +47,7 @@ $result = mysqli_query($koneksi, $query);
             <img src='../asset/images/" . $row["foto_mobil"] . "' class='card-img-top' alt='fotomobil' style='padding: 16px;'>
             <div class='card-body'>
               <h5 class='card-title'>" . $row["nama_mobil"] . "</h5>
-              <p class='card-text'>" . substr($row["deskripsi"], 0, 10) . '...' . "</p>
+              <p class='card-text'>" . substr($row["deskripsi"], 0, 50) . '...' . "</p>
               <span class='d-flex'>
                 <a href='Detail-Fatih.php?id=" . $row["id_mobil"] . "' class='btn btn-primary' style='border-radius: 100px; width:140px; height: 36px;'>Detail</a>
                 <a href='../config/delete.php?id=" . $row["id_mobil"] . "' class='btn btn-danger' style='border-radius: 100px; width:140px; height: 36px; margin-left:20px;'>Delete</a>
