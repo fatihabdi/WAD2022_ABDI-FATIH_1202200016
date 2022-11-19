@@ -3,6 +3,27 @@ require '../config/koneksi.php';
 
 $query = "SELECT * FROM showroom_EAD";
 $result = mysqli_query($koneksi, $query);
+
+// messages chatcer
+if (isset($_GET['pesan'])) {
+  if ($_GET['pesan'] == "berhasil") {
+    echo "<div class='alert alert-success' id='alert' role='alert'>
+    Data Berhasil ditambahkan.
+  </div>";
+  } else if ($_GET['pesan'] == "gagal") {
+    echo "<div class='alert alert-danger' id='alert' role='alert'>
+    Data Gagal ditambahkan.
+  </div>";
+  } else if ($_GET['pesan'] == "hapus") {
+    echo "<div class='alert alert-success' id='alert' role='alert'>
+    Data Berhasil dihapus.
+  </div>";
+  } else if ($_GET['pesan'] == "edit") {
+    echo "<div class='alert alert-success' id='alert' role='alert'>
+    Data Berhasil diupdate.
+  </div>";
+  }
+}
 ?>
 
 <!doctype html>
@@ -73,6 +94,14 @@ $result = mysqli_query($koneksi, $query);
   </footer>
   <!-- footer end -->
   <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script>
+    // Hide Alert after 3 seconds function
+    const timeout = document.getElementById('alert');
+    setTimeout(hideElement, 3000) //milliseconds until timeout//
+    function hideElement() {
+      timeout.style.display = 'none'
+    }
+  </script>
 </body>
 
 </html>

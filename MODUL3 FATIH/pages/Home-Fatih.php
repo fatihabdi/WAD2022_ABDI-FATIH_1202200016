@@ -4,14 +4,6 @@ require './config/koneksi.php';
 $query = "SELECT * FROM showroom_EAD";
 $result = mysqli_query($koneksi, $query);
 
-function onClick($result)
-{
-  if (mysqli_num_rows($result) > 0) {
-    header("Location: ./pages/List-Fatih.php");
-  } else {
-    header("Location: ./pages/Add-Fatih.php");
-  }
-}
 ?>
 
 <!doctype html>
@@ -34,11 +26,7 @@ function onClick($result)
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav gap-3">
           <a class="nav-link" style="color: white;" href="#home">Home</a>
-          <a class="nav-link" href="<?php if (mysqli_num_rows($result) > 0) {
-                                      echo "./pages/List-Fatih.php";
-                                    } else {
-                                      echo "./pages/Add-Fatih.php";
-                                    } ?>">MyCar</a>
+          <a class="nav-link" href="<?php (mysqli_num_rows($result) > 0) ? print "./pages/List-Fatih.php" : print "./pages/Add-Fatih.php" ?>">MyCar</a>
         </div>
       </div>
     </div>
@@ -51,12 +39,8 @@ function onClick($result)
       <div class="d-flex gap-5 bungkus justify-content-center align-items-center">
         <div>
           <h1>Selamat Datang Di<br /> Show Room Fatih</h1>
-          <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Quo laboriosam labore, facere libero officia iure hic error cum?</p>
-          <a href="<?php if (mysqli_num_rows($result) > 0) {
-                      echo "./pages/List-Fatih.php";
-                    } else {
-                      echo "./pages/Add-Fatih.php";
-                    } ?>" class="button btn-primary">MyCar</a>
+          <p class="mt-3">Showroom kami memberikan experience terbaik<br /> dan Mobil terbaik bagi anda.</p>
+          <a href="<?php (mysqli_num_rows($result) > 0) ? print "./pages/List-Fatih.php" : print "./pages/Add-Fatih.php" ?>" class="button btn-primary">MyCar</a>
           <div class="d-flex align-items-center gap-5 mt-5">
             <img src="<?php echo "asset/images/logo-ead.png" ?>" alt="logoead" style="width:100px;">
             <p style="margin-top: 20px; font-size:14px;">Fatih_1202200016</p>
