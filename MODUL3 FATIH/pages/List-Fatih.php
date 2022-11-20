@@ -97,7 +97,8 @@ if (isset($_GET['pesan'])) {
   <script>
     // Hide Alert after 3 seconds function
     const timeout = document.getElementById('alert');
-    setTimeout(hideElement, 3000) //milliseconds until timeout//
+    setTimeout(hideElement, 3000)
+
     function hideElement() {
       timeout.style.display = 'none'
     }
