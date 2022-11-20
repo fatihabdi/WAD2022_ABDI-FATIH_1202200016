@@ -12,7 +12,7 @@ if (isset($_GET['pesan'])) {
   </div>";
   } else if ($_GET['pesan'] == "gagal") {
     echo "<div class='alert alert-danger' id='alert' role='alert'>
-    Data Gagal ditambahkan.
+    Error
   </div>";
   } else if ($_GET['pesan'] == "hapus") {
     echo "<div class='alert alert-success' id='alert' role='alert'>
