@@ -1,6 +1,6 @@
-<?php
-$koneksi = new mysqli("localhost", "root", "", "modul3");
+  <?php
+  $koneksi = new mysqli();
 
-if (!$koneksi) {
-  die("Koneksi Gagal: " . $koneksi->connect_error);
-}
+  if (!$koneksi) {
+    die("Koneksi Gagal: " . $koneksi->connect_error);
+  }
