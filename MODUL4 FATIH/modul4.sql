@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2022 at 08:00 AM
+-- Generation Time: Nov 27, 2022 at 11:02 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -51,13 +51,6 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `no_hp` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `nama`, `email`, `password`, `no_hp`) VALUES
-(8, '1231', 'dotaawtf23@gmail.com', '', '123');
 
 --
 -- Indexes for dumped tables
