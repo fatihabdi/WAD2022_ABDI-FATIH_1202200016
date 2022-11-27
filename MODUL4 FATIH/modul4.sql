@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2022 at 10:38 PM
+-- Generation Time: Nov 27, 2022 at 08:00 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `modul3`
+-- Database: `modul4`
 --
 
 -- --------------------------------------------------------
@@ -38,13 +38,26 @@ CREATE TABLE `showroom_EAD` (
   `status_pembayaran` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `showroom_EAD`
+-- Table structure for table `users`
 --
 
-INSERT INTO `showroom_EAD` (`id_mobil`, `nama_mobil`, `pemilik_mobil`, `merk_mobil`, `tanggal_beli`, `deskripsi`, `foto_mobil`, `status_pembayaran`) VALUES
-(5, 'Mobil 2', 'Kunto', 'BMW', '2022-11-18', ' coba lagi ', 'mobil2.png', 'Lunas'),
-(6, 'SUKRO', 'Sulton', 'toyota', '2022-11-19', 'ada', 'mobil2.png', 'Lunas');
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `no_hp` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `nama`, `email`, `password`, `no_hp`) VALUES
+(8, '1231', 'dotaawtf23@gmail.com', '', '123');
 
 --
 -- Indexes for dumped tables
@@ -57,6 +70,12 @@ ALTER TABLE `showroom_EAD`
   ADD PRIMARY KEY (`id_mobil`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -64,7 +83,13 @@ ALTER TABLE `showroom_EAD`
 -- AUTO_INCREMENT for table `showroom_EAD`
 --
 ALTER TABLE `showroom_EAD`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
