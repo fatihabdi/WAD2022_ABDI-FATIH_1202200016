@@ -17,8 +17,8 @@ if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target . $gambar)) {
   if (mysqli_query($koneksi, $sql)) {
     header("location: ../pages/List-Fatih.php?pesan=berhasil");
   } else {
-    header("location: ../pages/List-Fatih.php?pesan=gagal1");
+    header("location: ../pages/List-Fatih.php?pesan=gagal");
   }
 } else {
-  header("location: ../pages/List-Fatih.php?pesan=gagal2");
+  header("location: ../pages/List-Fatih.php?pesan=gagal");
 }

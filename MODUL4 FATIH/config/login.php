@@ -20,8 +20,8 @@
     }
 
     session_start();
-    $_SESSION[''] = $data[''];
-    $_SESSION[''] = $data[''];
+    $_SESSION['id'] = $data['id'];
+    $_SESSION['nama'] = $data['nama'];
     header("location: ../pages/HomeAfter-Fatih.php");
   } else {
     header("location: ../pages/Login-Fatih.php?pesan=failed");
