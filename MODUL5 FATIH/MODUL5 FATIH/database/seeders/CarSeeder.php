@@ -18,6 +18,7 @@ class CarSeeder extends Seeder
         Showrooms::create([
             'name' => 'Toyota Alphard',
             'brand' => 'Toyota',
+            'id_user' => '1',
             'purchase_date' => '2021-01-01',
             'description' => 'mobil keren banget anjay mabar slebew',
             'image' => 'img/alphard.jpg',

@@ -33,6 +33,12 @@ php artisan migrate
 ```bash
 php artisan storage:link
 ```
+- Seed Database
+```bash
+php artisan db:seed --class=UserSeeder
+php artisan db:seed --class=CarSeeder
+```
+
 - Run the server
 ```bash
 php artisan serve
@@ -40,4 +46,12 @@ php artisan serve
 - Buka url di browser
 ``` 
 localhost:8000 or 127.0.0.1:8000
+```
+
+## Seeder Database
+This Seeder available in /database/seeders/ file <br/>
+- UserSeeder
+```bash
+Email : tes@gmail.com
+Password : 12345678
 ```
