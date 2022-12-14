@@ -1,4 +1,4 @@
-    <?php
+<?php
 
     namespace App\Http\Controllers;
 
@@ -32,7 +32,7 @@
          * @param Request $request
          * @return response
          */
-        public function register()
+        public function register(Request $request)
         {
             $data = $request->all();
 

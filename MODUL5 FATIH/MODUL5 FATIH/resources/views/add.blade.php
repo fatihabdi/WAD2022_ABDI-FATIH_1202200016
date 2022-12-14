@@ -7,6 +7,7 @@
         <p class="tambahp">Tambah Mobil Baru Anda Ke List Show Room</p>
         <form action="{{ url('addCar') }}" method="POST" enctype="multipart/form-data">
           @auth
+          @csrf
           
           <input type="text" value="{{ auth()->user()->id }}" style="display: none;" name="id_user">
           <label for="nama">Nama Mobil</label>

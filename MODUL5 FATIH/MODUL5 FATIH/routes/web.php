@@ -22,7 +22,7 @@
     Route::get('/register', [UserController::class, 'index'])->name('register.get');
     Route::post('/register', [UserController::class, 'register']);
     Route::get('login', [UserController::class, 'login'])->name('login.get');
-    Route::('login', [UserController::class, 'loginUser'])->name('');
+    Route::post('login', [UserController::class, 'loginUser'])->name('login.post');
     Route::get('logout', [UserController::class, 'logout'])->name('logout.get');
     route::post('/logout', [UserController::class, 'logoutUser']);
     route::put('/profile/{id}', [UserController::class, 'edit'])->name('updateProfile.put');
@@ -33,7 +33,7 @@
     // ==================== Showroom Route ====================
     Route::post('addCar', [ShowroomController::class, 'addCar'])->name('addCar.post');
     Route::get('/list', [ShowroomController::class, 'showCar'])->name('showCar');
-    Route::('', [ShowroomController::class, 'carDetail'])->name('carDetail');
+    Route::get('/detail/{id}', [ShowroomController::class, 'carDetail'])->name('carDetail');
     Route::put('/detail/{id}', [ShowroomController::class, 'editCar'])->name('updateCar.put');
     Route::delete('list/{id}', [ShowroomController::class, 'deleteCar']);
 
